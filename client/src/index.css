@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-dark-950 text-gray-100 font-sans antialiased;
+    background-image: radial-gradient(ellipse at 20% 50%, rgba(59, 130, 246, 0.04) 0%, transparent 60%),
+                      radial-gradient(ellipse at 80% 20%, rgba(168, 85, 247, 0.04) 0%, transparent 60%);
+    min-height: 100vh;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-1.5;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-dark-900;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-dark-600 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-dark-500;
+  }
+}
+
+@layer components {
+  /* ─── Glass card ─────────────────────────────────────────── */
+  .glass-card {
+    @apply bg-dark-800/60 backdrop-blur-md border border-white/[0.06] rounded-2xl;
+  }
+
+  /* ─── Gradient text ──────────────────────────────────────── */
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-400 via-accent-purple to-accent-cyan;
+  }
+
+  /* ─── Stat badge ─────────────────────────────────────────── */
+  .stat-badge {
+    @apply inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium;
+  }
+
+  /* ─── Nav link ───────────────────────────────────────────── */
+  .nav-link {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-gray-400
+           transition-all duration-200
+           hover:bg-dark-700/60 hover:text-gray-100;
+  }
+  .nav-link.active {
+    @apply bg-primary-500/10 text-primary-400 border border-primary-500/20;
+  }
+
+  /* ─── Table ──────────────────────────────────────────────── */
+  .data-table {
+    @apply w-full text-sm;
+  }
+  .data-table th {
+    @apply text-xs font-semibold uppercase tracking-wider text-gray-500 px-4 py-3 text-left;
+  }
+  .data-table td {
+    @apply px-4 py-3 text-gray-300 border-t border-white/[0.04];
+  }
+  .data-table tr:hover td {
+    @apply bg-white/[0.02];
+  }
+
+  /* ─── Input ──────────────────────────────────────────────── */
+  .form-input {
+    @apply w-full bg-dark-700/60 border border-white/[0.08] rounded-xl px-4 py-2.5 text-sm
+           text-gray-100 placeholder-gray-500 outline-none
+           focus:border-primary-500/50 focus:ring-1 focus:ring-primary-500/20
+           transition-all duration-200;
+  }
+
+  /* ─── Button ─────────────────────────────────────────────── */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold
+           bg-primary-600 hover:bg-primary-500 text-white
+           transition-all duration-200 active:scale-95;
+  }
+  .btn-danger {
+    @apply inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold
+           bg-red-600/20 hover:bg-red-600/40 text-red-400 border border-red-500/20
+           transition-all duration-200 active:scale-95;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold
+           bg-white/[0.04] hover:bg-white/[0.08] text-gray-300
+           border border-white/[0.06]
+           transition-all duration-200 active:scale-95;
+  }
+
+  /* ─── Skeleton loader ────────────────────────────────────── */
+  .skeleton {
+    @apply bg-dark-700/60 rounded-xl animate-pulse;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+}

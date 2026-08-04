@@ -1,0 +1,12 @@
+[
+  { "id": "c1",  "name": "NeuralPath AI",     "industry": "Artificial Intelligence", "website": "https://neuralpathAI.com" },
+  { "id": "c2",  "name": "GraphEdge Labs",    "industry": "Data Engineering",        "website": "https://graphedgelabs.io" },
+  { "id": "c3",  "name": "CloudNest Inc.",    "industry": "Cloud Computing",         "website": "https://cloudnest.com" },
+  { "id": "c4",  "name": "DevStream Co.",     "industry": "Software Development",    "website": "https://devstream.co" },
+  { "id": "c5",  "name": "Pixel Forge",       "industry": "Product Design",          "website": "https://pixelforge.design" },
+  { "id": "c6",  "name": "DataVault Systems", "industry": "Database Solutions",      "website": "https://datavault.systems" },
+  { "id": "c7",  "name": "CipherTech",        "industry": "Cybersecurity",           "website": "https://ciphertech.net" },
+  { "id": "c8",  "name": "StackBridge",       "industry": "Full-Stack Development",  "website": "https://stackbridge.dev" },
+  { "id": "c9",  "name": "Momentum Labs",     "industry": "Startup Accelerator",     "website": "https://momentumlabs.vc" },
+  { "id": "c10", "name": "Orbis Analytics",   "industry": "Business Intelligence",   "website": "https://orbisanalytics.com" }
+]

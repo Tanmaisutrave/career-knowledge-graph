@@ -1,0 +1,17 @@
+[
+  { "id": "j1",  "title": "Senior ML Engineer",         "experience": 5, "location": "San Francisco, CA", "salary": "$160,000 - $200,000", "companyId": "c1" },
+  { "id": "j2",  "title": "AI Research Scientist",      "experience": 7, "location": "Remote",             "salary": "$180,000 - $230,000", "companyId": "c1" },
+  { "id": "j3",  "title": "Graph Database Engineer",    "experience": 4, "location": "New York, NY",       "salary": "$140,000 - $175,000", "companyId": "c2" },
+  { "id": "j4",  "title": "Data Platform Lead",         "experience": 6, "location": "Remote",             "salary": "$155,000 - $190,000", "companyId": "c2" },
+  { "id": "j5",  "title": "Cloud Infrastructure Eng.",  "experience": 4, "location": "Seattle, WA",        "salary": "$145,000 - $180,000", "companyId": "c3" },
+  { "id": "j6",  "title": "DevOps Engineer",            "experience": 3, "location": "Austin, TX",         "salary": "$120,000 - $155,000", "companyId": "c3" },
+  { "id": "j7",  "title": "Full Stack Developer",       "experience": 3, "location": "Chicago, IL",        "salary": "$110,000 - $145,000", "companyId": "c4" },
+  { "id": "j8",  "title": "React Frontend Engineer",    "experience": 2, "location": "Remote",             "salary": "$100,000 - $135,000", "companyId": "c4" },
+  { "id": "j9",  "title": "UI/UX Designer",             "experience": 3, "location": "Los Angeles, CA",    "salary": "$95,000 - $125,000",  "companyId": "c5" },
+  { "id": "j10", "title": "Product Designer",           "experience": 4, "location": "New York, NY",       "salary": "$110,000 - $140,000", "companyId": "c5" },
+  { "id": "j11", "title": "Database Architect",         "experience": 7, "location": "Boston, MA",         "salary": "$165,000 - $205,000", "companyId": "c6" },
+  { "id": "j12", "title": "Backend Engineer (Node.js)", "experience": 3, "location": "Remote",             "salary": "$115,000 - $150,000", "companyId": "c8" },
+  { "id": "j13", "title": "Security Engineer",          "experience": 5, "location": "Washington, DC",     "salary": "$150,000 - $185,000", "companyId": "c7" },
+  { "id": "j14", "title": "Data Analyst",               "experience": 2, "location": "Denver, CO",         "salary": "$90,000 - $115,000",  "companyId": "c10" },
+  { "id": "j15", "title": "Software Engineer (Growth)", "experience": 2, "location": "San Francisco, CA",  "salary": "$125,000 - $160,000", "companyId": "c9" }
+]

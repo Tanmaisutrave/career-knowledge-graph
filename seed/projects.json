@@ -1,0 +1,17 @@
+[
+  { "id": "p1",  "name": "GraphMind Analytics",      "description": "A real-time analytics platform using Neo4j graph database to map organizational knowledge and skill networks.", "github": "https://github.com/projects/graphmind" },
+  { "id": "p2",  "name": "TalentRadar",              "description": "AI-powered talent discovery engine that traverses skill graphs to match candidates with open roles at scale.", "github": "https://github.com/projects/talentRadar" },
+  { "id": "p3",  "name": "CloudOps Dashboard",       "description": "A full-stack monitoring dashboard built with React, Node.js and deployed on AWS with Kubernetes orchestration.", "github": "https://github.com/projects/cloudops" },
+  { "id": "p4",  "name": "NeuralViz",                "description": "Interactive machine learning model visualizer built with Python, TensorFlow and a React front end.", "github": "https://github.com/projects/neuralviz" },
+  { "id": "p5",  "name": "ShopStream",               "description": "High-performance e-commerce API backed by PostgreSQL and Redis caching, containerized with Docker.", "github": "https://github.com/projects/shopstream" },
+  { "id": "p6",  "name": "DevCollab",                "description": "Real-time collaborative coding environment using Node.js WebSockets and MongoDB for session persistence.", "github": "https://github.com/projects/devcollab" },
+  { "id": "p7",  "name": "QueryCraft",               "description": "A GraphQL API builder that auto-generates schema from PostgreSQL tables with TypeScript type safety.", "github": "https://github.com/projects/querycraft" },
+  { "id": "p8",  "name": "StyleForge",               "description": "A Figma-to-Tailwind CSS component generator that bridges design and frontend development workflows.", "github": "https://github.com/projects/styleforge" },
+  { "id": "p9",  "name": "KubeWatcher",              "description": "Kubernetes cluster health monitor with real-time metrics dashboards and AWS CloudWatch integration.", "github": "https://github.com/projects/kubewatcher" },
+  { "id": "p10", "name": "LinguaAI",                 "description": "NLP-powered document classification service using Python ML pipelines and TensorFlow transformer models.", "github": "https://github.com/projects/linguaAI" },
+  { "id": "p11", "name": "SecureVault API",          "description": "Zero-trust REST API gateway with JWT auth, rate limiting via Redis, and audit logging to PostgreSQL.", "github": "https://github.com/projects/securevault" },
+  { "id": "p12", "name": "NextCommerce",             "description": "Server-side rendered e-commerce storefront built with Next.js, TypeScript and Tailwind CSS.", "github": "https://github.com/projects/nextcommerce" },
+  { "id": "p13", "name": "DataPipeline Pro",         "description": "Automated ETL pipeline tool using Python, Docker and AWS S3 to process large-scale datasets.", "github": "https://github.com/projects/datapipeline" },
+  { "id": "p14", "name": "OpenGraph Social",         "description": "Federated social network built on graph database principles with Neo4j and an Express.js REST backend.", "github": "https://github.com/projects/opengraph" },
+  { "id": "p15", "name": "InsightBoard",             "description": "Business intelligence dashboard using React, TypeScript, GraphQL APIs and dynamic chart visualizations.", "github": "https://github.com/projects/insightboard" }
+]

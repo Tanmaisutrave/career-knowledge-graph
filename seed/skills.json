@@ -1,0 +1,22 @@
+[
+  { "id": "s1",  "name": "Python",       "category": "Programming Language" },
+  { "id": "s2",  "name": "JavaScript",   "category": "Programming Language" },
+  { "id": "s3",  "name": "TypeScript",   "category": "Programming Language" },
+  { "id": "s4",  "name": "React",        "category": "Frontend Framework" },
+  { "id": "s5",  "name": "Node.js",      "category": "Backend Runtime" },
+  { "id": "s6",  "name": "GraphQL",      "category": "API Technology" },
+  { "id": "s7",  "name": "Neo4j",        "category": "Database" },
+  { "id": "s8",  "name": "PostgreSQL",   "category": "Database" },
+  { "id": "s9",  "name": "MongoDB",      "category": "Database" },
+  { "id": "s10", "name": "Docker",       "category": "DevOps" },
+  { "id": "s11", "name": "Kubernetes",   "category": "DevOps" },
+  { "id": "s12", "name": "AWS",          "category": "Cloud Platform" },
+  { "id": "s13", "name": "Machine Learning", "category": "AI/ML" },
+  { "id": "s14", "name": "TensorFlow",   "category": "AI/ML" },
+  { "id": "s15", "name": "Tailwind CSS", "category": "Frontend Framework" },
+  { "id": "s16", "name": "Next.js",      "category": "Frontend Framework" },
+  { "id": "s17", "name": "Express.js",   "category": "Backend Framework" },
+  { "id": "s18", "name": "Redis",        "category": "Database" },
+  { "id": "s19", "name": "Git",          "category": "Tool" },
+  { "id": "s20", "name": "Figma",        "category": "Design Tool" }
+]
