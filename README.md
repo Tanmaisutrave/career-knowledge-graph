@@ -1,244 +1,154 @@
 # 🚀 Career Knowledge Graph Platform
 
-> A production-ready Full Stack Graph Database application built using **React**, **Express.js**, and **CognoDB (Neo4j Compatible)**. This project demonstrates graph-based data modeling, graph analytics, recommendation systems, shortest path traversal, and interactive visualization for career networking.
+> **Wexa AI Take-Home Assignment**  
+A full-stack Career Knowledge Graph application built using **React**, **Express.js**, and **CognoDB (Neo4j Compatible)**. The project demonstrates graph database modeling, Cypher queries, graph analytics, recommendation systems, and interactive graph visualization.
 
 ---
 
-# 🌐 Live Demo
-
-### 🔗 Frontend (Vercel)
-
-https://career-knowledge-graph-ten.vercel.app
-
-### 🔗 Backend API (Render)
-
-https://career-knowledge-graph.onrender.com
+# 🌐 Submission Links
 
 ### 💻 GitHub Repository
-
 https://github.com/Tanmaisutrave/career-knowledge-graph
+
+### 🚀 Live Demo
+https://career-knowledge-graph-ten.vercel.app/home
+
+### ⚙ Backend API
+https://career-knowledge-graph.onrender.com
+
+### 🎥 Screen Recording
+https://drive.google.com/file/d/1x2pn86gc78WvnL36zwsiTlXxBkCUW61w/view?usp=drive_link
 
 ---
 
-# 📌 Project Overview
+# 📌 Use Case
 
-Traditional relational databases struggle when dealing with highly connected data.
+Professional networking platforms contain highly connected data where users possess multiple skills, contribute to projects, apply for jobs, and interact with companies.
 
-This project models an entire professional ecosystem as a **Knowledge Graph**, where Users, Skills, Projects, Jobs, and Companies are connected through graph relationships instead of foreign keys.
+This application models the ecosystem as a **Knowledge Graph**, allowing efficient graph traversals for:
 
-The application enables:
-
-- Graph Traversals
 - Job Recommendations
 - Similar User Discovery
 - Graph Analytics
-- Interactive Graph Visualization
+- Skill Relationship Analysis
 - Shortest Path Queries
-- Relationship Analysis
+- Interactive Graph Visualization
 
-using Cypher queries running on CognoDB.
+---
+
+# 🌐 Why a Graph Database?
+
+Traditional relational databases require multiple JOIN operations to traverse connected data.
+
+Graph databases directly connect entities through relationships, making multi-hop traversals faster and simpler.
+
+This project uses a graph database to efficiently perform:
+
+- Job recommendations
+- Similar user discovery
+- Shortest path search
+- Relationship analysis
+- Connected node analytics
+
+---
+
+# 🧠 Why CognoDB?
+
+CognoDB is a Neo4j-compatible managed graph database supporting the Bolt protocol and Cypher query language.
+
+It was chosen because it provides:
+
+- Neo4j compatibility
+- Cypher query support
+- Managed cloud hosting
+- Fast graph traversals
+- Easy deployment
+
+---
+
+# 🏗 Data Model
+
+```mermaid
+graph LR
+User -->|HAS_SKILL| Skill
+User -->|WORKED_ON| Project
+User -->|APPLIED_TO| Job
+Project -->|USES| Skill
+Company -->|POSTED| Job
+Job -->|REQUIRES| Skill
+```
 
 ---
 
 # ✨ Features
 
-## 📊 Dashboard
-
-- KPI Cards
-- Interactive Charts
-- Graph Statistics
-- Skills Analytics
-- Job Analytics
-- Company Analytics
-
----
-
-## 👨 Users
-
-- View all users
-- Experience information
-- Skills
-- Projects
-
----
-
-## 🧠 Skills
-
-- Skills Catalog
-- Skill Categories
-- User Adoption Statistics
-
----
-
-## 📂 Projects
-
-- Technology Usage
-- Contributors
-- Skills Used
-
----
-
-## 🏢 Companies
-
-- Hiring Companies
-- Industry Analysis
-- Job Listings
-
----
-
-## 💼 Jobs
-
-- Job Listings
-- Experience Level
-- Location Analysis
-
----
-
-## 🤖 Recommendation Engine
-
-- Job Recommendations
-- Similar Users
-- Connection Suggestions
-
-using multi-hop graph traversal.
-
----
-
-## 🌐 Interactive Graph Explorer
-
-Interactive Force Directed Graph built using
-
-- Zoom
-- Pan
-- Hover
-- Drag
-- Node Search
-- Node Filtering
-- Relationship Highlighting
-
----
-
-## 📈 Graph Analytics
-
-Includes
-
-- Graph Density
-- Average Degree
-- Relationship Distribution
-- Node Distribution
-- Top Hiring Companies
-- Most Connected Nodes
-
----
-
-# 🏗 Graph Schema
-
-```
-User
- │
- ├── HAS_SKILL ─────► Skill
- │
- ├── WORKED_ON ─────► Project
- │
- └── APPLIED_TO ────► Job
-
-Project
- └── USES ─────────► Skill
-
-Company
- └── POSTED ───────► Job
-
-Job
- └── REQUIRES ─────► Skill
-```
-
----
-
-# 📊 Graph Statistics
-
-| Metric | Value |
-|---------|-------|
-| Users | 20 |
-| Skills | 20 |
-| Projects | 15 |
-| Companies | 10 |
-| Jobs | 15 |
-| Relationships | 407 |
-| Total Nodes | 80 |
+- 📊 Interactive Dashboard
+- 👥 User Management
+- 🧠 Skills Analytics
+- 📂 Projects Management
+- 🏢 Company Information
+- 💼 Job Listings
+- 🤖 Job Recommendation Engine
+- 🌐 Graph Explorer
+- 📈 Graph Analytics
+- 🔍 Shortest Path Search
+- 📡 REST API
 
 ---
 
 # 🛠 Tech Stack
 
-## Frontend
-
+### Frontend
 - React 19
-- Vite 8
+- Vite
 - Tailwind CSS
-- React Router DOM
+- React Router
 - Axios
 - Recharts
 - React Force Graph 2D
-- React Icons
 
----
-
-## Backend
-
+### Backend
 - Node.js
 - Express.js
 - Neo4j Driver
-- CognoDB Cloud
-- dotenv
-- CORS
+
+### Database
+- CognoDB (Neo4j Compatible)
 
 ---
 
-## Database
-
-CognoDB Cloud
-
-Neo4j Compatible Graph Database
-
----
-
-# 📁 Folder Structure
+# 📁 Project Structure
 
 ```
 career-knowledge-graph
-
+│
 ├── client
-│
 ├── server
-│
 ├── seed
-│
 ├── docs
-│
 └── README.md
 ```
 
 ---
 
-# ⚙ Environment Variables
+# ⚙ Creating a CognoDB Instance
 
-## Server
+1. Create a CognoDB account.
+2. Create a new database.
+3. Copy the Bolt URI.
+4. Get the Username and Password.
+5. Add them to `server/.env`.
 
-```
+```env
 PORT=5000
-
 COGNODB_URI=
-
 COGNODB_USERNAME=
-
 COGNODB_PASSWORD=
 ```
 
----
+Client environment variable:
 
-## Client
-
-```
+```env
 VITE_API_URL=https://career-knowledge-graph.onrender.com/api
 ```
 
@@ -246,181 +156,136 @@ VITE_API_URL=https://career-knowledge-graph.onrender.com/api
 
 # 🚀 Installation
 
-## Clone Repository
+Clone the repository
 
 ```bash
 git clone https://github.com/Tanmaisutrave/career-knowledge-graph.git
 ```
 
----
-
-## Backend
+Install backend
 
 ```bash
 cd server
-
 npm install
-
 npm start
 ```
 
----
-
-## Frontend
+Install frontend
 
 ```bash
 cd client
-
 npm install
-
 npm run dev
 ```
 
----
+Seed database
 
-# 🌱 Seed Database
-
-```
+```bash
 cd seed
-
 node seed.js
 ```
 
-Automatically creates
+---
 
-- Users
-- Skills
-- Projects
-- Companies
-- Jobs
-- Relationships
+# 🧠 Main Cypher Queries
+
+### Job Recommendation
+
+Finds jobs matching a user's skills.
+
+### Similar Users
+
+Finds users with common skills.
+
+### Shortest Path
+
+Finds the shortest connection between a user and a company.
+
+### Graph Statistics
+
+Calculates nodes, relationships, graph density, and degree.
+
+### Top Hiring Companies
+
+Ranks companies based on hiring activity.
 
 ---
 
-# 📡 REST API
-
-### Users
+# 📡 API Overview
 
 ```
 GET /api/users
-```
-
-### Skills
-
-```
 GET /api/skills
-```
-
-### Projects
-
-```
 GET /api/projects
-```
-
-### Companies
-
-```
 GET /api/companies
-```
-
-### Jobs
-
-```
 GET /api/jobs
-```
-
-### Recommendations
-
-```
-GET /api/recommendations/jobs/:id
-
-GET /api/recommendations/users/:id
-
-GET /api/recommendations/path
-```
-
-### Analytics
-
-```
+GET /api/recommendations/*
 GET /api/analytics/*
 ```
 
 ---
 
-# 📷 Screenshots
+# 📷 UI Screenshots
 
-Add screenshots here.
+Add your screenshots inside:
+
+```
+docs/screenshots/
+```
 
 Example:
 
+```markdown
+## Home
+![Home](docs/screenshots/home.png)
+
+## Dashboard
+![Dashboard](docs/screenshots/dashboard.png)
+
+## Users
+![Users](docs/screenshots/users.png)
+
+## Skills
+![Skills](docs/screenshots/skills.png)
+
+## Projects
+![Projects](docs/screenshots/projects.png)
+
+## Companies
+![Companies](docs/screenshots/companies.png)
+
+## Jobs
+![Jobs](docs/screenshots/jobs.png)
+
+## Recommendations
+![Recommendations](docs/screenshots/recommendations.png)
+
+## Graph Explorer
+![Graph Explorer](docs/screenshots/graph-explorer.png)
+
+## Analytics
+![Analytics](docs/screenshots/analytics.png)
 ```
-docs/home.png
-
-docs/dashboard.png
-
-docs/graph-explorer.png
-
-docs/analytics.png
-```
-
----
-
-# 🧠 Key Graph Queries
-
-✔ Job Recommendation
-
-✔ Similar Users
-
-✔ Graph Density
-
-✔ Shortest Path
-
-✔ Related Skills
-
-✔ Connected Nodes
-
-✔ Top Hiring Companies
-
----
-
-# 📈 Performance
-
-- 35+ REST APIs
-- Interactive Graph Visualization
-- Responsive UI
-- Graph Traversals
-- Production Deployment
-- Modular Architecture
 
 ---
 
 # 🚀 Deployment
 
-## Frontend
-
+### Frontend
 Vercel
 
-https://career-knowledge-graph-ten.vercel.app
-
----
-
-## Backend
-
+### Backend
 Render
-
-https://career-knowledge-graph.onrender.com
 
 ---
 
 # 🔮 Future Improvements
 
-- Authentication (JWT)
-- Graph Machine Learning
+- JWT Authentication
 - Resume Matching
+- Graph Machine Learning
 - AI Chat Assistant
-- Real-time Notifications
 - Advanced Search
-- Graph Export
 - Admin Dashboard
 
 ---
@@ -429,13 +294,10 @@ https://career-knowledge-graph.onrender.com
 
 **Tanmai Sutrave**
 
-B.Tech Computer Science Engineering
-
+B.Tech Computer Science Engineering  
 MLR Institute of Technology
 
-GitHub
-
-https://github.com/Tanmaisutrave
+GitHub: https://github.com/Tanmaisutrave
 
 ---
 
@@ -445,9 +307,6 @@ https://github.com/Tanmaisutrave
 - CognoDB
 - Neo4j
 - React
+- Express.js
 - Vercel
 - Render
-
----
-
-## ⭐ If you like this project, consider giving it a star!
