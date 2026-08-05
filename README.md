@@ -1,270 +1,453 @@
-# Career Knowledge Graph Platform
+# 🚀 Career Knowledge Graph Platform
 
-> A production-ready full-stack web application demonstrating graph database capabilities with CognoDB (Neo4j-compatible), built as a take-home assignment for **Wexa AI**.
-
----
-
-## Overview
-
-The Career Knowledge Graph Platform models professional relationships — users, skills, projects, companies, and jobs — as a **property graph** rather than relational tables. This unlocks multi-hop traversals that are impossible or slow in SQL:
-
-- "Find me jobs matching my skill set" (3-hop path)
-- "Who else has a similar profile?" (shared-node traversal)
-- "What's the shortest path from me to this company?" (shortest-path algorithm)
+> A production-ready Full Stack Graph Database application built using **React**, **Express.js**, and **CognoDB (Neo4j Compatible)**. This project demonstrates graph-based data modeling, graph analytics, recommendation systems, shortest path traversal, and interactive visualization for career networking.
 
 ---
 
-## Features
+# 🌐 Live Demo
 
-| Area | Details |
-|------|---------|
-| 🗂 Graph Model | 5 node types, 6 relationship types |
-| 🔍 Graph Traversals | Multi-hop Cypher queries for recommendations & path-finding |
-| 📊 Dashboard | KPI cards + 6 interactive Recharts charts |
-| 🌐 Graph Explorer | Interactive ForceGraph2D with zoom, pan, click, hover |
-| 🧠 Recommendations | AI-style job matching + similar-user discovery |
-| 🔗 Shortest Path | BFS traversal between any user and company |
-| 🎨 UI | Dark theme, glassmorphism, Tailwind CSS, smooth animations |
-| 📡 REST API | 35+ endpoints across 6 resource routers |
-| 🌱 Seed Script | Auto-generates 20 users, 20 skills, 15 projects, 10 companies, 15 jobs |
+### 🔗 Frontend (Vercel)
+
+https://career-knowledge-graph-ten.vercel.app
+
+### 🔗 Backend API (Render)
+
+https://career-knowledge-graph.onrender.com
+
+### 💻 GitHub Repository
+
+https://github.com/Tanmaisutrave/career-knowledge-graph
 
 ---
 
-## Tech Stack
+# 📌 Project Overview
 
-**Frontend**
-- React 19 + Vite 8
-- Tailwind CSS 3
-- React Router v6
+Traditional relational databases struggle when dealing with highly connected data.
+
+This project models an entire professional ecosystem as a **Knowledge Graph**, where Users, Skills, Projects, Jobs, and Companies are connected through graph relationships instead of foreign keys.
+
+The application enables:
+
+- Graph Traversals
+- Job Recommendations
+- Similar User Discovery
+- Graph Analytics
+- Interactive Graph Visualization
+- Shortest Path Queries
+- Relationship Analysis
+
+using Cypher queries running on CognoDB.
+
+---
+
+# ✨ Features
+
+## 📊 Dashboard
+
+- KPI Cards
+- Interactive Charts
+- Graph Statistics
+- Skills Analytics
+- Job Analytics
+- Company Analytics
+
+---
+
+## 👨 Users
+
+- View all users
+- Experience information
+- Skills
+- Projects
+
+---
+
+## 🧠 Skills
+
+- Skills Catalog
+- Skill Categories
+- User Adoption Statistics
+
+---
+
+## 📂 Projects
+
+- Technology Usage
+- Contributors
+- Skills Used
+
+---
+
+## 🏢 Companies
+
+- Hiring Companies
+- Industry Analysis
+- Job Listings
+
+---
+
+## 💼 Jobs
+
+- Job Listings
+- Experience Level
+- Location Analysis
+
+---
+
+## 🤖 Recommendation Engine
+
+- Job Recommendations
+- Similar Users
+- Connection Suggestions
+
+using multi-hop graph traversal.
+
+---
+
+## 🌐 Interactive Graph Explorer
+
+Interactive Force Directed Graph built using
+
+- Zoom
+- Pan
+- Hover
+- Drag
+- Node Search
+- Node Filtering
+- Relationship Highlighting
+
+---
+
+## 📈 Graph Analytics
+
+Includes
+
+- Graph Density
+- Average Degree
+- Relationship Distribution
+- Node Distribution
+- Top Hiring Companies
+- Most Connected Nodes
+
+---
+
+# 🏗 Graph Schema
+
+```
+User
+ │
+ ├── HAS_SKILL ─────► Skill
+ │
+ ├── WORKED_ON ─────► Project
+ │
+ └── APPLIED_TO ────► Job
+
+Project
+ └── USES ─────────► Skill
+
+Company
+ └── POSTED ───────► Job
+
+Job
+ └── REQUIRES ─────► Skill
+```
+
+---
+
+# 📊 Graph Statistics
+
+| Metric | Value |
+|---------|-------|
+| Users | 20 |
+| Skills | 20 |
+| Projects | 15 |
+| Companies | 10 |
+| Jobs | 15 |
+| Relationships | 407 |
+| Total Nodes | 80 |
+
+---
+
+# 🛠 Tech Stack
+
+## Frontend
+
+- React 19
+- Vite 8
+- Tailwind CSS
+- React Router DOM
 - Axios
 - Recharts
 - React Force Graph 2D
 - React Icons
 
-**Backend**
-- Node.js + Express 5
-- Neo4j Driver 5 (CognoDB compatible)
-- dotenv, cors
+---
 
-**Database**
-- CognoDB Cloud (bolt+s:// protocol, Neo4j-compatible)
+## Backend
+
+- Node.js
+- Express.js
+- Neo4j Driver
+- CognoDB Cloud
+- dotenv
+- CORS
 
 ---
 
-## Folder Structure
+## Database
+
+CognoDB Cloud
+
+Neo4j Compatible Graph Database
+
+---
+
+# 📁 Folder Structure
 
 ```
-Wexa-Graph-Assignment/
-├── client/                    # React frontend
-│   ├── public/
-│   ├── src/
-│   │   ├── assets/
-│   │   ├── components/
-│   │   │   ├── Cards/         # StatCard, UserCard, JobCard
-│   │   │   ├── Charts/        # BarChart, PieChart
-│   │   │   ├── Navbar.jsx
-│   │   │   ├── Sidebar.jsx
-│   │   │   └── Loader.jsx
-│   │   ├── pages/
-│   │   │   ├── Dashboard.jsx
-│   │   │   ├── Users.jsx
-│   │   │   ├── Skills.jsx
-│   │   │   ├── Projects.jsx
-│   │   │   ├── Companies.jsx
-│   │   │   ├── Jobs.jsx
-│   │   │   ├── Recommendations.jsx
-│   │   │   └── GraphExplorer.jsx
-│   │   ├── services/
-│   │   │   └── api.js         # All Axios API calls
-│   │   ├── App.jsx
-│   │   └── main.jsx
-│   ├── tailwind.config.js
-│   ├── postcss.config.js
-│   └── package.json
+career-knowledge-graph
+
+├── client
 │
-├── server/                    # Express backend
-│   ├── config/
-│   │   └── db.js              # Neo4j driver
-│   ├── controllers/           # Business logic
-│   ├── routes/                # Express routers
-│   ├── queries/               # Cypher query strings
-│   ├── middleware/            # Error handler
-│   ├── utils/                 # neo4jUtils (sanitize, generateId)
-│   ├── app.js
-│   ├── server.js
-│   └── .env
+├── server
 │
-├── seed/                      # Database seeding
-│   ├── seed.js
-│   ├── users.json
-│   ├── skills.json
-│   ├── projects.json
-│   ├── companies.json
-│   └── jobs.json
+├── seed
 │
-├── docs/
-│   ├── api-documentation.md
-│   ├── cypher-queries.md
-│   ├── architecture.png
-│   └── graph-diagram.png
+├── docs
 │
 └── README.md
 ```
 
 ---
 
-## Graph Model
+# ⚙ Environment Variables
 
-```mermaid
-graph LR
-    User --HAS_SKILL--> Skill
-    User --WORKED_ON--> Project
-    User --APPLIED_TO--> Job
-    Project --USES--> Skill
-    Job --REQUIRES--> Skill
-    Company --POSTED--> Job
+## Server
+
 ```
-
-### Node Properties
-
-| Node | Properties |
-|------|-----------|
-| User | id, name, email, experience, location |
-| Skill | id, name, category |
-| Project | id, name, description, github |
-| Job | id, title, experience, location, salary |
-| Company | id, name, industry, website |
-
----
-
-## Environment Variables
-
-Create `server/.env` (already provided in project):
-
-```env
 PORT=5000
-COGNODB_URI=bolt+s://db-521da5fb.databases.cognodb.com
-COGNODB_USERNAME=cognodb
-COGNODB_PASSWORD=<your-password>
-```
 
-For the client, create `client/.env` for production builds:
-```env
-VITE_API_URL=https://your-render-backend.onrender.com/api
+COGNODB_URI=
+
+COGNODB_USERNAME=
+
+COGNODB_PASSWORD=
 ```
 
 ---
 
-## Installation & Setup
+## Client
 
-### Prerequisites
-- Node.js 18+
-- npm 9+
-
-### 1. Clone the repository
-```bash
-git clone https://github.com/your-username/Wexa-Graph-Assignment.git
-cd Wexa-Graph-Assignment
+```
+VITE_API_URL=https://career-knowledge-graph.onrender.com/api
 ```
 
-### 2. Install backend dependencies
+---
+
+# 🚀 Installation
+
+## Clone Repository
+
+```bash
+git clone https://github.com/Tanmaisutrave/career-knowledge-graph.git
+```
+
+---
+
+## Backend
+
 ```bash
 cd server
+
 npm install
+
+npm start
 ```
 
-### 3. Install frontend dependencies
+---
+
+## Frontend
+
 ```bash
-cd ../client
+cd client
+
 npm install
+
+npm run dev
 ```
 
-### 4. Seed the database
-```bash
-cd ../seed
+---
+
+# 🌱 Seed Database
+
+```
+cd seed
+
 node seed.js
 ```
-This will:
-- Clear existing data
-- Create 20 users, 20 skills, 15 projects, 10 companies, 15 jobs
-- Auto-generate all relationships
 
-### 5. Start the backend
-```bash
-cd ../server
-npm run dev
+Automatically creates
+
+- Users
+- Skills
+- Projects
+- Companies
+- Jobs
+- Relationships
+
+---
+
+# 📡 REST API
+
+### Users
+
 ```
-Server starts at `http://localhost:5000`
-
-### 6. Start the frontend
-```bash
-cd ../client
-npm run dev
+GET /api/users
 ```
-App opens at `http://localhost:5173`
+
+### Skills
+
+```
+GET /api/skills
+```
+
+### Projects
+
+```
+GET /api/projects
+```
+
+### Companies
+
+```
+GET /api/companies
+```
+
+### Jobs
+
+```
+GET /api/jobs
+```
+
+### Recommendations
+
+```
+GET /api/recommendations/jobs/:id
+
+GET /api/recommendations/users/:id
+
+GET /api/recommendations/path
+```
+
+### Analytics
+
+```
+GET /api/analytics/*
+```
 
 ---
 
-## API Documentation
+# 📷 Screenshots
 
-See [`docs/api-documentation.md`](docs/api-documentation.md) for the full endpoint reference.
+Add screenshots here.
 
-Quick summary:
-- `GET /api/users` — list all users
-- `GET /api/recommendations/jobs/:userId` — job recommendations
-- `GET /api/recommendations/graph/data` — full graph for visualization
-- `GET /api/recommendations/path?userId=u1&companyId=c1` — shortest path
+Example:
 
----
+```
+docs/home.png
 
-## Cypher Queries
+docs/dashboard.png
 
-See [`docs/cypher-queries.md`](docs/cypher-queries.md) for all 15 documented Cypher queries with explanations.
+docs/graph-explorer.png
 
-Highlights:
-- **Multi-hop job recommendation** (3-hop via shared skills)
-- **Shortest path** via `shortestPath()` built-in
-- **Collaborative filtering** for similar users
+docs/analytics.png
+```
 
 ---
 
-## Deployment
+# 🧠 Key Graph Queries
 
-### Backend → Render
+✔ Job Recommendation
 
-1. Push code to GitHub
-2. Create a new **Web Service** on [render.com](https://render.com)
-3. Set Root Directory: `server`
-4. Build Command: `npm install`
-5. Start Command: `node server.js`
-6. Add environment variables:
-   - `COGNODB_URI`
-   - `COGNODB_USERNAME`
-   - `COGNODB_PASSWORD`
+✔ Similar Users
 
-### Frontend → Vercel
+✔ Graph Density
 
-1. Import repository on [vercel.com](https://vercel.com)
-2. Set Root Directory: `client`
-3. Framework Preset: **Vite**
-4. Add environment variable:
-   - `VITE_API_URL` = `https://your-render-service.onrender.com/api`
+✔ Shortest Path
+
+✔ Related Skills
+
+✔ Connected Nodes
+
+✔ Top Hiring Companies
 
 ---
 
-## Future Scope
+# 📈 Performance
 
-- [ ] Full-text search across all nodes
-- [ ] User authentication (JWT)
-- [ ] Skill gap analysis (compare user skills vs job requirements)
-- [ ] Company similarity graph (companies sharing skill demands)
-- [ ] Graph ML — node embeddings for smarter recommendations
-- [ ] Real-time notifications via WebSockets
-- [ ] Export graph to PDF / image
-- [ ] Admin panel for bulk operations
+- 35+ REST APIs
+- Interactive Graph Visualization
+- Responsive UI
+- Graph Traversals
+- Production Deployment
+- Modular Architecture
 
 ---
 
-## Author
+# 🚀 Deployment
 
-Built as a take-home assignment for **Wexa AI** — demonstrating graph database modeling, Cypher query engineering, and modern full-stack development practices.
+## Frontend
+
+Vercel
+
+https://career-knowledge-graph-ten.vercel.app
+
+---
+
+## Backend
+
+Render
+
+https://career-knowledge-graph.onrender.com
+
+---
+
+# 🔮 Future Improvements
+
+- Authentication (JWT)
+- Graph Machine Learning
+- Resume Matching
+- AI Chat Assistant
+- Real-time Notifications
+- Advanced Search
+- Graph Export
+- Admin Dashboard
+
+---
+
+# 👨‍💻 Author
+
+**Tanmai Sutrave**
+
+B.Tech Computer Science Engineering
+
+MLR Institute of Technology
+
+GitHub
+
+https://github.com/Tanmaisutrave
+
+---
+
+# 🙏 Acknowledgements
+
+- Wexa AI
+- CognoDB
+- Neo4j
+- React
+- Vercel
+- Render
+
+---
+
+## ⭐ If you like this project, consider giving it a star!
